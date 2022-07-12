@@ -1,9 +1,9 @@
+import math
+
 def f(x):
     return x**2 - 2
 
-'''Program to find the zero of x²-2 in the interval [a,b] while using variable n and the bisection method.'''
 def bisection(a,b,n):
-    '''Function to find the zero of x²-2 in the interval [a,b] while using variable n and the bisection method.'''
     # Test if the interval is valid
     if a > b:
         return 'Invalid interval'
@@ -22,40 +22,17 @@ def bisection(a,b,n):
     else:
         return x
     
+# Test the function
+print("Bisektion von f(x) = x² - 2 mit Terminierungsfall n = 5")
+print("x: " + str(bisection(0,2,5)))
+print("Abstand von sqrt(2): " + str(abs(bisection(0,2,5) - math.sqrt(2))))
 
-'''gui to get three user inputs: a, b, and n.'''
-import tkinter as tk
-from tkinter import ttk
-from tkinter import messagebox
+print("Bisektion von f(x) = x² - 2 mit Terminierungsfall n = 10")
+print("x: " + str(bisection(0,2,10)))
+print("Abstand von sqrt(2): " + str(abs(bisection(0,2,10) - math.sqrt(2))))
 
-root = tk.Tk()
-root.title('Bisection Method')
-root.geometry('300x200')
+print("Bisektion von f(x) = x² - 2 mit Terminierungsfall n = 15")
+print("x: " + str(bisection(0,2,15)))
+print("Abstand von sqrt(2): " + str(abs(bisection(0,2,15) - math.sqrt(2))))
 
-a = tk.StringVar()
-b = tk.StringVar()
-n = tk.StringVar()
-
-label_a = ttk.Label(root, text='a:')
-label_a.grid(row=0, column=0, sticky=tk.W)
-entry_a = ttk.Entry(root, textvariable=a)
-entry_a.grid(row=0, column=1)
-
-label_b = ttk.Label(root, text='b:')
-label_b.grid(row=1, column=0, sticky=tk.W)
-entry_b = ttk.Entry(root, textvariable=b)
-entry_b.grid(row=1, column=1)
-
-label_n = ttk.Label(root, text='n:')
-label_n.grid(row=2, column=0, sticky=tk.W)
-entry_n = ttk.Entry(root, textvariable=n)
-entry_n.grid(row=2, column=1)
-
-button = ttk.Button(root, text='Find Zero', command=lambda: 
-
-    messagebox.showinfo('Result', bisection(float(a.get()), float(b.get()), float(n.get())))
-
-)
-button.grid(row=3, column=0, columnspan=2)
-
-root.mainloop()
+input("Irgendeine Taste drücken zum beenden...")
