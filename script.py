@@ -3,7 +3,6 @@ def f(x):
 
 '''Program to find the zero of x²-2 in the interval [a,b] while using variable n and the bisection method.'''
 def bisection(a,b,n):
-    '''Function to find the zero of x²-2 in the interval [a,b] while using variable n and the bisection method.'''
     # Test if the interval is valid
     if a > b:
         return 'Invalid interval'
